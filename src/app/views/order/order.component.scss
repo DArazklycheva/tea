@@ -1,0 +1,13 @@
+.form {
+  &.close {
+    display: none;
+  }
+}
+
+.error-text {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}

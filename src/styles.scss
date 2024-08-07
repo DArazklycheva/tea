@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+router-outlet,
+app-product,
+app-order {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex: 0 0 auto;
+}
+
+.container.container-slider {
+  margin-top: 72px;
+  margin-bottom: 72px;
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 1001;
+  width: 32px;
+  height: 32px;
+}
+
+.slick-prev {
+  left: 25px;
+}
+
+.slick-next {
+  right: 25px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 32px;
+}
+
+.container.container-slider img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container.container-accordion {
+  max-width: 850px;
+}
+
+.ui-accordion .ui-accordion-header {
+  margin-top: 16px;
+  padding: 25px 23px;
+}
+
+.ui-accordion .ui-accordion-content {
+  padding-bottom: 8px;
+  padding-top: 16px;
+}
+
+.ui-accordion-content p {
+  margin-bottom: 0;
+}
+
+.ui-state-default {
+  background: linear-gradient(0deg, #076BFF 0%, #007BFF 100%);
+  color: #FFFFFF;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.ui-widget-content,
+.ui-state-active {
+  border: none;
+}
+
+.container-sm.container-form {
+  max-width: 650px;
+}
+
+.hvr-buzz:focus,
+.hvr-buzz:active {
+  animation-iteration-count: 5;
+}
+
+.gratitude {
+  display: none;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.gratitude.active {
+  display: flex;
+}
+
+.gratitude-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.gratitude-body {
+  margin: auto;
+  width: 500px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  text-align: center;
+  padding: 50px 15px 40px 15px;
+  position: relative;
+}
+
+.gratitude-body p {
+  color: #202528;
+  font-size: 22px;
+}
+
+input.ng-invalid.ng-dirty,
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+.loader-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+
+  .loader {
+    border: 16px solid #076BFF;
+    border-top: 15px solid #fff;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

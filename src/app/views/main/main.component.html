@@ -1,0 +1,38 @@
+<!-- Баннер с чаем -->
+<section class="slider">
+  <div class="container container-slider">
+    <div class="single-item">
+      <div>
+        <img src="assets/images/chay1.png" alt="Tea">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Аккордион с вопросами -->
+<section class="accordion">
+  <div class="container container-accordion">
+    <h2 class="text-center fw-bold mb-5 mt-5">Ответы на часто задаваемые вопросы</h2>
+    <div id="accordion">
+
+      <div class="item" [ngClass]="{'active': item.active}" *ngFor="let item of items; let index = index">
+        <div class="heading" (click)="itemClicked(index)">{{item.svg}} {{item.title}}</div>
+        <div>
+          <p class="content">{{item.content}}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Попап «Посмотрите наши чайные коллекции» -->
+<div class="popup" id="popup">
+  <div class="popup-container">
+    <div class="popup-body">
+      <p>Посмотрите наши чайные коллекции</p>
+      <a class="btn btn-primary" routerLink="/products">Смотреть</a>
+      <div class="popup-close" (click)="popupClose()">X</div>
+    </div>
+  </div>
+</div>

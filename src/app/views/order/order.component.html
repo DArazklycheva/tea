@@ -1,0 +1,185 @@
+<!-- Блок с формой для заказа -->
+<section class="form" id="form">
+  <div class="container-sm container-form">
+    <h2 class="text-center fw-bold mb-5 mt-5">Сделать заказ</h2>
+
+    <form class="row g-3" [formGroup]="sendForm" (ngSubmit)="createOrder()">
+
+      <div class="col-md-12">
+        <label for="product" class="form-label">Товар</label>
+        <input type="text"
+        class="form-control"
+        id="product"
+        [(ngModel)]="formValues.product"
+        name="product"
+        formControlName="product">
+      </div>
+
+      <div class="col-md-4">
+        <label for="name" class="form-label"
+        [class]="{'text-danger': name?.invalid && (name?.dirty || name?.touched)}">
+        Имя
+        </label>
+        <input type="text"
+        class="form-control"
+        id="name"
+        [(ngModel)]="formValues.name"
+        name="name"
+        formControlName="name">
+
+        <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+          <div class="text-danger" *ngIf="name?.errors?.['required']">
+            Name is required.
+          </div>
+          <div class="text-danger" *ngIf="name?.errors?.['pattern']">
+            Name is incorrect.
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="col-md-4">
+        <label for="last_name" class="form-label"
+        [class]="{'text-danger': lastName?.invalid && (lastName?.dirty || lastName?.touched)}">
+        Фамилия
+        </label>
+        <input type="text"
+        class="form-control"
+        id="last_name"
+        [(ngModel)]="formValues.lastName"
+        name="last_name"
+        formControlName="lastName">
+
+        <div *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)">
+          <div class="text-danger" *ngIf="lastName?.errors?.['required']">
+            Last name is required.
+          </div>
+          <div class="text-danger" *ngIf="lastName?.errors?.['pattern']">
+            Last name is incorrect.
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="col-md-4">
+        <label for="phone" class="form-label"
+        [class]="{'text-danger': phone?.invalid && (phone?.dirty || phone?.touched)}">
+        Телефон
+        </label>
+        <input type="text"
+        class="form-control"
+        id="phone"
+        [(ngModel)]="formValues.phone"
+        name="phone"
+        formControlName="phone">
+
+        <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)">
+          <div class="text-danger" *ngIf="phone?.errors?.['required']">
+            Phone is required.
+          </div>
+          <div class="text-danger" *ngIf="phone?.errors?.['pattern']">
+            Phone is incorrect.
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6">
+        <label for="country" class="form-label"
+        [class]="{'text-danger': country?.invalid && (country?.dirty || country?.touched)}">
+        Страна
+        </label>
+        <input type="text"
+        class="form-control"
+        id="country"
+        [(ngModel)]="formValues.country"
+        name="country"
+        formControlName="country">
+
+        <div *ngIf="country?.invalid && (country?.dirty || country?.touched)">
+          <div class="text-danger" *ngIf="country?.errors?.['required']">
+            Country is required.
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6">
+        <label for="zip" class="form-label"
+        [class]="{'text-danger': zip?.invalid && (zip?.dirty || zip?.touched)}">
+        Индекс
+        </label>
+        <input type="text"
+        class="form-control"
+        id="zip"
+        [(ngModel)]="formValues.zip"
+        name="zip"
+        formControlName="zip">
+
+        <div *ngIf="zip?.invalid && (zip?.dirty || zip?.touched)">
+          <div class="text-danger" *ngIf="zip?.errors?.['required']">
+            Zip is required.
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="col-md-12">
+        <label for="address" class="form-label"
+        [class]="{'text-danger': address?.invalid && (address?.dirty || address?.touched)}">
+        Адрес
+        </label>
+        <input type="text"
+        class="form-control"
+        id="address"
+        [(ngModel)]="formValues.address"
+        name="address"
+        formControlName="address">
+
+        <div *ngIf="address?.invalid && (address?.dirty || address?.touched)">
+          <div class="text-danger" *ngIf="address?.errors?.['required']">
+            Address is required.
+          </div>
+          <div class="text-danger" *ngIf="address?.errors?.['pattern']">
+            Address is incorrect.
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="col-md-12">
+        <label for="comment" class="form-label">Комментарий к заказу</label>
+        <input type="text"
+        class="form-control"
+        id="comment"
+        [(ngModel)]="formValues.comment"
+        name="comment"
+        formControlName="comment">
+      </div>
+
+
+      <div class="col-12 mt-5">
+        <button class="btn btn-primary px-4 hvr-buzz" data-bs-target="#staticBackdrop" id="button" [disabled]="sendForm.invalid || sendForm.disabled">
+          Отправить
+        </button>
+        <div class="error-text fw-bolder text-danger" id="error-text">Произошла ошибка. Попробуйте еще раз.</div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Блок с благодарностью -->
+<div class="gratitude" id="gratitude">
+  <div class="gratitude-container">
+    <div class="gratitude-body mb-5 mt-5">
+      <p class="fs-1 fw-bolder">Спасибо за заказ!</p>
+      <p class="fs-4">Мы свяжемся с вами в ближайшее время!</p>
+    </div>
+  </div>
+</div>
